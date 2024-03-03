@@ -1,10 +1,10 @@
 import os    ## to interact with the operating system 
 from pathlib import Path  ## to create system compatible path of our system
-
+import logging
 # we need to create a list of file to work with
 
 list_of_files = [
-".github/workflows"/.gitkeep,
+".github/workflows/.gitkeep",
 "src/__init__.py",  #the folder inside src or source folder
 "src/components/__init__.py" ,  #will have all steps and stages of data ml, also component is the part of the training pipelinbe
 "src/components/data_ingestion.py",
