@@ -4,7 +4,7 @@ import logging
 # we need to create a list of file to work with
 
 list_of_files = [
-".github/workflows/.gitkeep",
+".github/workflows/.gitkeep", #will use this for continous integration and deployement
 "src/__init__.py",  #the folder inside src or source folder
 "src/components/__init__.py" ,  #will have all steps and stages of data ml, also component is the part of the training pipelinbe
 "src/components/data_ingestion.py",
@@ -17,7 +17,7 @@ list_of_files = [
 "src/utils/__init__.py"
 "src/utils/utils.py",
 "src/logger/logging.py",
-"src/exception/exception"
+"src/exception/exception.py"
 "tests/unit/__init__.py",  # for unit or seperate tests
 "tests/integration/__init__.py", # for integrated test
 "init_setup.sh", # a shell script
@@ -31,7 +31,7 @@ list_of_files = [
 ]
 
 for filepath in list_of_files:
-    filepath=Path(filepath)
+    filepath=Path(filepath)  ##we are making a system compatile path
     filedr,filename=os.path.split(filepath) #this split the path into directory and filename
     if filedr != "":
         os.makedirs(filedr,exist_ok=True)
