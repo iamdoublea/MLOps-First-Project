@@ -6,7 +6,7 @@ import logging
 list_of_files = [
 ".github/workflows/.gitkeep", #will use this for continous integration and deployement
 "src/__init__.py",  #the folder inside src or source folder
-"src/components/__init__.py" ,  #will have all steps and stages of data ml, also component is the part of the training pipelinbe
+"src/components/__init__.py",  #will have all steps and stages of data ml, also component is the part of the training pipelinbe
 "src/components/data_ingestion.py",
 "src/components/data_transformation.py",
 "src/components/model_trainer.py",
@@ -14,10 +14,10 @@ list_of_files = [
 "src/pipepline/__init__.py",
 "src/pipepline/training_pipeline.py",
 "src/pipepline/prediction_pipeline.py",
-"src/utils/__init__.py"
+"src/utils/__init__.py",
 "src/utils/utils.py",
 "src/logger/logging.py",
-"src/exception/exception.py"
+"src/exception/exception.py",
 "tests/unit/__init__.py",  # for unit or seperate tests
 "tests/integration/__init__.py", # for integrated test
 "init_setup.sh", # a shell script
