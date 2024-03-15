@@ -11,4 +11,4 @@ black==22.8.0
 flake8==5.0.4
 mypy==0.971
 
--e .  
+-e .  #It's a convenient way to create an editable installation, meaning changes to your project source code are reflected immediately without needing to reinstall the package.
