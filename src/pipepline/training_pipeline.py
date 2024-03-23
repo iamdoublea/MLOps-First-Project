@@ -1,0 +1,26 @@
+import os
+import sys
+from src.components.data_ingestion import DataIngestion
+from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
+from src.logger.logging import logging
+from src.exception.exception import customexception
+
+import pandas as pd
+import numpy as np
+
+from src.components.data_ingestion import DataIngestion
+from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
+
+
+obj=DataIngestion()
+
+train_data_path,test_data_path=obj.initiate_data_ingestion()
+
+data_transformation=DataTransformation()
+
+train_arr,test_arr=data_transformation.initialize_data_transformation()
+
+model_trainer_obj=ModelTrainer()
+model_trainer_obj.initiate_model_training()

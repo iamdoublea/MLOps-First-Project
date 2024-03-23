@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 import mlflow
 import mlflow.sklearn
 import pickle
-import src.DimondPricePrediction.utils.utils import load_object
+from src.DimondPricePrediction.utils.utils import load_object
 
 
 
