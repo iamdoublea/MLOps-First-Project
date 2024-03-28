@@ -21,14 +21,20 @@ from src.utils.utils import save_object
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join("artifacts","preprocessor.pkl")
 
+    
+
 
 class DataTransformation:
     def __init__(self):
-        self.data_transformation_config=DataTransformationConfig
+        self.data_transformation_config=DataTransformationConfig()
 
     def get_data_transformation(self):
         try:
             logging.info("Data Transformation Initiated")
+
+            # Define which columns should be ordinal-encoded and which should be scaled
+            categorical_cols = ['cut', 'color','clarity']
+            numerical_cols = ['carat', 'depth','table', 'x', 'y', 'z']
 
             #Define which column ranking for each ordinal variable
             cut_categories=["Fair","Good","Very Good","Premium","Ideal"]
@@ -49,7 +55,7 @@ class DataTransformation:
             cat_pipeline=Pipeline(
                 steps=[
                     ('imputer',SimpleImputer(strategy='most_frequent')),
-                    ('ordinalencoder',OrdinalEncoder(categories=['cut_categories,color_categories,calrity_categories'])),
+                    ('ordinalencoder',OrdinalEncoder(categories=[cut_categories,color_categories,clarity_categories])),
                     ('scaler',StandardScaler())
 
 
@@ -65,7 +71,7 @@ class DataTransformation:
 
 
         except Exception as e:
-            logging.info()
+            logging.info("Exception occured in the initiate_datatransformation")
             raise customexception(e,sys)
         
     
@@ -118,7 +124,8 @@ class DataTransformation:
         except Exception as e:
             logging.info("Exception occured in the initiate_data_transformation")
             raise customexception(e,sys)
-        
+
+
 
         
 

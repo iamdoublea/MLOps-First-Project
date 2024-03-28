@@ -45,7 +45,7 @@ class ModelTrainer:
             }
 
 
-            model_report:dict=evaluate_model(X_train,y_train,X_test,y_test)
+            model_report:dict=evaluate_model(X_train,y_train,X_test,y_test,models)
             print(model_report)
             print('\n=====================')
             logging.info(f"Model Report : {model_report}")
@@ -57,11 +57,11 @@ class ModelTrainer:
                 list(model_report.values()).index(best_model_score)
             ]
 
-            best_model = models[best_model]
+            best_model = models[best_model_name]
 
-            print(f"Best model found, Model name = {best_model_name}")
+            print(f"Best model found, Model name = {best_model_name},R2 Score : {best_model_score}")
             print("\n====================")
-            logging.info(f"Best Model Found, Model name : {best_model_name}")
+            logging.info(f"Best Model Found, Model name : {best_model_name},R2 Score : {best_model_score}")
 
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
@@ -69,7 +69,7 @@ class ModelTrainer:
             )
 
         except Exception as e:
-            logging.info()
+            logging.info('Exception occured at Model Training')
             raise customexception(e,sys)
         
 
